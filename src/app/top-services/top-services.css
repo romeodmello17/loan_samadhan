@@ -1,0 +1,125 @@
+.loan-services-section {
+  background: #F4F8FF;
+  color: #1B2E4B;
+  padding: 30px 0;
+}
+
+/* Card styling */
+.service-card {
+  background: #ffffff;
+  border: 1px solid #cce0f0;
+  /* REMOVED: width: 15rem; */
+  /* REMOVED: height: 200px; - Height is now dynamic based on content */
+  min-height: 70px; /* Setting a minimum height for visual consistency */
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  /* Added padding-bottom to prevent content/button overlap */
+  padding-bottom: 30px !important;
+}
+
+/* Icon Styling */
+.service-icon {
+  font-size: 3rem;
+  color: #ff9933;
+  margin-bottom: 0.5rem;
+}
+
+.service-card:hover .service-icon {
+  display: none;
+}
+
+.service-icon-hover {
+  font-size: 2rem;
+  color: #1B2E4B;
+  margin-bottom: 0.5rem;
+}
+
+/* Hover effect */
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: #ff9933;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Hide hover content initially */
+.content-hover {
+  display: none;
+}
+
+/* Show hover content and hide default content */
+.service-card:hover .content-default {
+  display: none;
+}
+
+.service-card:hover .content-hover {
+  display: block;
+}
+
+/* FIXED BUTTON POSITION (Stable at bottom) */
+.apply-fixed {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 3rem); /* Ensures button stays centered */
+}
+
+/* Text colors */
+.service-card h5 {
+  color: #1B2E4B;
+  transition: color 0.3s ease;
+}
+
+/* .service-card:hover h5 {
+  color: #1B2E4B;
+} */
+
+.service-card p {
+  color: #555;
+  /* Added responsive adjustment for text size on small screens */
+  font-size: 0.95rem;
+}
+
+/* Button styling */
+.apply-fixed .btn {
+  background-color: #ff9933;
+  border: none !important;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 6px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+/* Button hover */
+.apply-fixed .btn:hover {
+  background-color: #e68a00;
+  transform: translateY(-1px);
+}
+
+.apply-fixed .btn:active,
+.apply-fixed .btn:focus:active {
+  background-color: #cc7a00 !important;
+  color: #1c1c1c;
+  box-shadow: none !important;
+}
+
+/* --- MEDIA QUERIES FOR SMALL SCREENS --- */
+@media (max-width: 576px) {
+  /* On mobile, stack them full width and reduce padding/text size slightly */
+  .service-card {
+    padding: 1rem !important;
+    min-height: 150px; /* Reduced minimum height */
+  }
+
+  .service-card p {
+    font-size: 0.9rem; /* Slightly smaller text */
+  }
+
+  .apply-fixed {
+    bottom: 10px;
+    width: calc(100% - 2rem); /* Less width for button padding */
+  }
+}

@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+  /* background-color: white; */
+  color: rgb(27, 29, 35);
+  /* text-transform: uppercase; */
+  /* font-weight:100; */
+}
+
+.hero-section {
+  margin-top: 90px; /* offset for fixed navbar */
+  overflow: hidden;
+  background: #000;
+}
+.bi{
+  color: #27A590;
+}
+
+
+.carousel-inner,
+.carousel-item {
+  height: 500px;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+  filter: brightness(0.65); /* dark overlay for text visibility */
+  display: block;
+}
+
+/* Caption Styling */
+.carousel-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 100px;
+  text-align: left;
+  max-width: 600px;
+}
+
+.text-brand {
+  color: #ff9933;
+}
+
+.btn-brand {
+  background-color: #ff9933;
+  color: white;
+  border: none;
+  box-shadow: 0 3px 6px rgba(255, 153, 51, 0.3);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn-brand:hover {
+  background-color: #e68a00;
+  transform: translateY(-1px);
+}
+
+
+/* Custom indicators */
+.carousel-indicators.custom-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid white;
+  margin: 0 6px;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+  opacity: 1;
+}
+
+.carousel-indicators.custom-indicators .active {
+  background-color: #ff9933;
+  transform: scale(1.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .carousel-inner,
+  .carousel-item {
+    height: 350px;
+  }
+  .carousel-caption {
+    padding: 40px 20px;
+  }
+  .carousel-caption h1 {
+    font-size: 1.6rem;
+  }
+}

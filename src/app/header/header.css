@@ -1,0 +1,101 @@
+/* GLOBAL RESET & BASE STYLES */
+* {
+  /* padding: 0; */
+  box-sizing: border-box;
+  /* background: #1B2E4B; */
+}
+
+/* Base background for body/main container should be set, not * */
+/* Removing `background-color: white;` from `*` to prevent issues */
+
+
+/* LOGO ADJUSTMENT */
+.navbar-brand img {
+  margin-left: 1rem;
+  /* Removed padding-top: 5px; - usually better handled by parent alignment */
+}
+/* NAVBAR LINKS & HOVER EFFECTS */
+.nav-link {
+  color: #1B2E4B ;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.dropdown-item:hover {
+  color: #ff9933 !important;
+  /* Added a background color on hover for better visual feedback on dropdown items */
+  background-color: #fff9f4 !important; /* Light background for hover */
+}
+/* .fa-solid{
+  color: #1B2E4B;
+} */
+
+/* DROPDOWN STYLING - MAKING IT PERFECT */
+.dropdown-menu {
+  padding: 0.5rem 0;
+  /* background-color: transparent; -> Changed to white for better contrast with shadow */
+  background-color: white; 
+  min-width: 12rem; /* Give the dropdown some fixed width */
+  border-radius: 8px; /* Slightly rounded corners */
+}
+
+.dropdown-item {
+  color: #1c1c1c;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+  background-color: white; /* Ensure dropdown items have white background */
+}
+
+.dropdown-item:hover {
+  /* Set specific hover background if needed, otherwise inherit from general hover */
+  background-color: #fff9f4 !important; 
+}
+
+
+/* DESKTOP HOVER DROPDOWN (Perfecting the Hover) */
+/* This block enables the dropdown on hover on desktop */
+@media (min-width: 992px) {
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Remove top margin for smooth transition */
+    /* Adjust positioning if needed */
+    margin-left: 0; 
+  }
+}
+
+/* APPLY BUTTON STYLING */
+.btn-apply {
+  background-color: #ff9933;
+  color: white;
+  border: none;
+  box-shadow: 0 3px 6px rgba(255, 153, 51, 0.747); /* Stronger shadow */
+  transition: all 0.3s ease;
+}
+
+.btn-apply:hover {
+  color: white;
+  background-color: #e68a00;
+  transform: translateY(-2px); /* Better visual lift */
+  box-shadow: 0 5px 10px rgba(255, 153, 51, 0.5); /* Enhanced shadow on hover */
+}
+.btn-apply:active{
+  background-color: #cc7a00 !important;
+  color: #1c1c1c;
+}
+/* BURGER MENU PROFESSIONAL LOOK */
+.custom-toggler:focus {
+    box-shadow: none; /* Remove default focus outline */
+}
+
+.navbar-toggler-icon svg {
+    display: block;
+    width: 1.5em; /* Set width */
+    height: 1.5em; /* Set height */
+    background-image: none; /* Override Bootstrap default */
+}
+
+/* Optional: Make the burger icon color the same as your accent color when toggled */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon svg path {
+  stroke: #ff9933; /* Accent color when open */
+}

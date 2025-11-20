@@ -1,0 +1,9 @@
+.bg-custom-footer {
+  background-color: #1B2E4B;
+  height: 30vh;
+}
+
+.footer-logo {
+  height: 10vh;     /* Adjust as needed */
+  width: auto;
+}

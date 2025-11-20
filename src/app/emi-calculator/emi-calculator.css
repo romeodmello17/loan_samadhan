@@ -1,0 +1,123 @@
+/* ===== SECTION BACKGROUND TO MATCH THE WEBSITE ===== */
+.emi-calculator-section {
+  background: #f4f8fc; /* Matches your "Our Top Services" section */
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Container width fix */
+.container {
+  max-width: 90%;
+}
+.container h2 {
+  color: #1c1c1c;
+}
+
+/* ===== CARD STYLING ===== */
+.card {
+  border: none;
+  border-radius: 18px; /* Rounded like your top services boxes */
+  overflow: hidden;
+}
+
+.border-top-accent {
+  border-top: 4px solid #ff8b2c; /* Your theme orange */
+}
+
+/* ===== HEADINGS ===== */
+.text-primary {
+  color: #1a73e8 !important; /* Your website light blue */
+}
+
+.text-secondary {
+  color: #555 !important;
+}
+
+.text-warning {
+  color: #ff8b2c !important; /* Your orange */
+}
+
+.text-success {
+  color: #28a745 !important;
+}
+
+/* ===== RANGE SLIDERS ===== */
+.range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  background: #dce7f3; /* Matches your light card border color */
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #1a73e8; /* Blue thumb */
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(26, 115, 232, 0.5);
+}
+
+.range-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #1a73e8;
+  border-radius: 50%;
+}
+
+/* ===== DONUT CHART LEGEND BOXES ===== */
+.legend-box {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+/* ===== TABLE STYLING ===== */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #ffffff;
+}
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: #f8fbff; /* Gentle theme-matching row stripe */
+}
+
+.table thead th {
+  background: #eaf2ff;
+  color: #1a73e8;
+  border-bottom: 2px solid #d1e3ff;
+}
+
+/* ===== PAGINATION BUTTONS ===== */
+.pagination-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border: 1px solid #1a73e8 !important;
+  color: #1a73e8 !important;
+  transition: 0.2s ease-in-out;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: #1a73e8 !important;
+  color: #fff !important;
+}
+
+/* Disable button look */
+.pagination-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ===== NUMBER INPUT CLEANUP ===== */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
