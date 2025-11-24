@@ -41,31 +41,83 @@
   color: #28a745 !important;
 }
 
-/* ===== RANGE SLIDERS ===== */
+/* ===== ALERT BOXES (EMI & TOTAL PAYMENT) - SOFTER BORDERS ===== */
+.result-alert-box {
+  /* Use a softer box shadow instead of a harsh border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 8px; /* Slightly rounded corners for the box */
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Very light border */
+  position: relative;
+  padding-left: 1.5rem; /* Ensure space for the colored line */
+}
+
+/* Custom left line for EMI box (primary) */
+.result-alert-box.primary-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px; /* The thickness of the accent border */
+  height: 100%;
+  background-color: #1a73e8; /* Primary blue color */
+  border-radius: 8px 0 0 8px; /* Rounded top-left and bottom-left */
+}
+
+/* Custom left line for Total Payment box (success) */
+.result-alert-box.success-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px; /* The thickness of the accent border */
+  height: 100%;
+  background-color: #28a745; /* Success green color */
+  border-radius: 8px 0 0 8px; /* Rounded top-left and bottom-left */
+}
+
+/* ===== RANGE SLIDERS - ORANGE ACTIVE COLOR FIX ===== */
 .range-slider {
   -webkit-appearance: none;
   appearance: none;
   height: 8px;
-  background: #6d96dd; /* Matches your light card border color */
+  background: transparent; /* Must be transparent for accent-color to work well */
   border-radius: 4px;
   outline: none;
   cursor: pointer;
+
+  /* Modern standard: Sets the thumb and active track color to orange */
+  accent-color: #ff8b2c;
+}
+
+/* Webkit (Chrome, Safari) styling for the complete track (the gray inactive part) */
+.range-slider::-webkit-slider-runnable-track {
+  /* Explicitly set the full track background to gray */
+  background: #ccc;
+  height: 8px;
+  border-radius: 4px;
 }
 
 .range-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
-  background: #1a73e8; /* Blue thumb */
+  background: #ff8b2c; /* ORANGE THUMB */
   border-radius: 50%;
-  box-shadow: 0 0 8px rgba(26, 115, 232, 0.5);
+  box-shadow: 0 0 8px rgba(255, 139, 44, 0.5);
+  margin-top: -6px; /* Center the thumb vertically */
+}
+
+/* Firefox styling for the ACTIVE track (progress/fill) */
+.range-slider::-moz-range-progress {
+  background-color: #ff8b2c; /* ORANGE ACTIVE TRACK */
 }
 
 .range-slider::-moz-range-thumb {
   width: 20px;
   height: 20px;
-  background: #1a73e8;
+  background: #ff8b2c; /* ORANGE THUMB */
   border-radius: 50%;
+  border: none;
 }
 
 /* ===== DONUT CHART LEGEND BOXES ===== */

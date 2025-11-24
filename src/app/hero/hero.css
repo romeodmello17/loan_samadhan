@@ -46,18 +46,27 @@
 
 .btn-brand {
   background-color: #ff9933;
-  color: white;
+  color: white !important;
   border: none;
-  box-shadow: 0 3px 6px rgba(255, 153, 51, 0.3);
+  padding: 12px 28px;
   border-radius: 6px;
+  font-size: 18px;
+  display: inline-block;
+  box-shadow: 0 3px 6px rgba(255, 153, 51, 0.74);
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .btn-brand:hover {
   background-color: #e68a00;
-  transform: translateY(-1px);
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(255, 153, 51, 0.5);
 }
-
+.btn-brand:active {
+  background-color: #cc7a00 !important;
+  color: #1c1c1c !important;
+}
 
 /* Custom indicators */
 .carousel-indicators.custom-indicators button {

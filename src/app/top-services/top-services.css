@@ -1,7 +1,7 @@
 .loan-services-section {
-  background: #F4F8FF;
-  color: #1B2E4B;
-  padding: 30px 0;
+  background: #f4f8ff;
+  color: #1b2e4b;
+  padding: 20px 0;
 }
 
 /* Card styling */
@@ -32,7 +32,7 @@
 
 .service-icon-hover {
   font-size: 2rem;
-  color: #1B2E4B;
+  color: #1b2e4b;
   margin-bottom: 0.5rem;
 }
 
@@ -68,7 +68,7 @@
 
 /* Text colors */
 .service-card h5 {
-  color: #1B2E4B;
+  color: #1b2e4b;
   transition: color 0.3s ease;
 }
 
