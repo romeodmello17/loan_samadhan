@@ -1,0 +1,33 @@
+/* Section background matching your theme */
+* {
+  box-sizing: border-box;
+  color: #1b2e4b;
+}
+.whyus-section-outer {
+  background-color: #f4f8ff;
+  padding: 0 35px;
+}
+
+/* Inner card styling */
+.whyus-section-inner {
+  background-color: #ffffff;
+  border: 1px solid #d3ddee6c;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Optional: improve icon spacing on mobile */
+.whyus-section-inner i {
+  display: block;
+  margin-bottom: 8px;
+  transition: 0.3s ease;
+  color: #ff9933;
+}
+.whyus-section-inner .col-md-4:hover {
+  transform: translateY(-5px);
+  transition: 0.3s ease;
+}
+
+.whyus-section-inner .col-md-4:hover i {
+  color: #e68a00;
+  transform: scale(1.15);
+}
