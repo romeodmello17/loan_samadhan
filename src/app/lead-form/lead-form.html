@@ -1,0 +1,118 @@
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <!-- FORM SECTION -->
+    <div class="col-12 col-md-6 rounded-4 p-4 shadow-sm bg-white">
+      <form [formGroup]="applyForm" (ngSubmit)="submit()">
+        <!-- NAME -->
+        <div class="mb-3">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-control" formControlName="name" />
+
+          @if (name?.hasError('required')) {
+          <span class="error-text">Name is required.</span>
+          } @if (name?.invalid && (name?.dirty || name?.touched)) {
+          <span class="error-text">At least 3 characters.</span>
+          }
+        </div>
+
+        <!-- PHONE -->
+        <div class="mb-3">
+          <label class="form-label">Phone Number</label>
+          <input type="text" class="form-control" formControlName="phone" />
+
+          @if (phone?.hasError('required')) {
+          <span class="error-text">Phone number is required.</span>
+          } @if (phone?.hasError('pattern')) {
+          <span class="error-text">Enter a valid 10-digit number.</span>
+          }
+        </div>
+
+        <!-- EMAIL -->
+        <div class="mb-3">
+          <label class="form-label">Email (optional)</label>
+          <input type="email" class="form-control" formControlName="email" />
+
+          @if (email?.hasError('email')) {
+          <span class="error-text">Invalid email format.</span>
+          }
+        </div>
+
+        <!-- CITY -->
+        <div class="mb-3">
+          <label class="form-label">City</label>
+          <input type="text" class="form-control" formControlName="city" />
+
+          @if (city?.hasError('required')) {
+          <span class="error-text">City is required.</span>
+          }
+        </div>
+
+        <!-- LOAN AMOUNT -->
+        <div class="mb-3">
+          <label class="form-label">Loan Amount</label>
+          <input type="number" class="form-control" formControlName="loanAmount" />
+
+          @if (loanAmount?.hasError('required')) {
+          <span class="error-text">Loan amount is required.</span>
+          } @if (loanAmount?.hasError('min')) {
+          <span class="error-text">Minimum loan is ₹1,000.</span>
+          } @if (loanAmount?.hasError('max')) {
+          <span class="error-text">Maximum loan is ₹50,00,000.</span>
+          }
+        </div>
+
+        <!-- LOAN TYPE -->
+        <div class="mb-3">
+          <label class="form-label">Loan Type</label>
+          <select class="form-select" formControlName="loanType">
+            <option value="">Select Loan Type...</option>
+            <option value="Personal Loan">Personal Loan</option>
+            <option value="Business Loan">Business Loan</option>
+            <option value="Home Loan">Home Loan</option>
+            <option value="Credit Card Loan">Credit Card Loan</option>
+            <option value="Other">Other</option>
+          </select>
+
+          @if (loanType?.hasError('required')) {
+          <span class="error-text">Loan type is required.</span>
+          }
+        </div>
+
+        <!-- LEAD SOURCE -->
+        <div class="mb-3">
+          <label class="form-label">How did you find us?</label>
+          <select class="form-select" formControlName="leadSource">
+            <option value="Website">Website</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Facebook">Facebook</option>
+            <option value="WhatsApp">WhatsApp</option>
+            <option value="Referral">Referral</option>
+          </select>
+        </div>
+
+        @if (successMessage) {
+        <div class="alert alert-success">{{ successMessage }}</div>
+        } @if (errorMessage) {
+        <div class="alert alert-danger">{{ errorMessage }}</div>
+        }
+
+        <!-- SUBMIT -->
+        <button class="btn btn-primary w-100 mt-2" type="submit" [disabled]="loading">
+          {{ loading ? 'Submitting...' : 'Submit' }}
+        </button>
+      </form>
+    </div>
+
+    <!-- PREVIEW SECTION -->
+    <div class="col-12 col-md-6 rounded-4 p-4 shadow-sm bg-white mt-3 mt-md-0">
+      <h4>Preview:</h4>
+      <p><strong>Name:</strong> {{ applyForm.value.name }}</p>
+      <p><strong>Phone:</strong> {{ applyForm.value.phone }}</p>
+      <p><strong>Email:</strong> {{ applyForm.value.email }}</p>
+      <p><strong>City:</strong> {{ applyForm.value.city }}</p>
+      <p><strong>Loan Type:</strong> {{ applyForm.value.loanType }}</p>
+      <p><strong>Amount:</strong> {{ applyForm.value.loanAmount }}</p>
+      <p><strong>Source:</strong> {{ applyForm.value.leadSource }}</p>
+    </div>
+  </div>
+</div>
