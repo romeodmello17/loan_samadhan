@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class LeadService {
-  private API = 'http://localhost:8080/api/leads';
+  // private API = 'http://localhost:3000/api/lead';
+  private API = 'https://lead-proxy-backend.onrender.com/api/lead';
 
   constructor(private http: HttpClient) {}
 
